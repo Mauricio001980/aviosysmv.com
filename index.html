@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AvioSysMV | Avionics & Systems Engineering Consultant</title>
-  <meta name="description" content="AvioSysMV — Mauricio Valenzuela, independent avionics and systems engineering consultant. EASA/FAA certification, DO-178C, DO-254, ARP4754A, Part 23/25/27/29, UAV/eVTOL programmes." />
+  <title>AvioSysMV | Avionics & Systems Engineering Consulting</title>
+  <meta name="description" content="AvioSysMV — Expert avionics and systems engineering consulting. EASA, FAA and Transport Canada certification. DO-178C, DO-254, ARP4754A, Part 23/25/27/29, UAV/eVTOL." />
   <style>
     /* ── Reset & tokens ─────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,7 +31,6 @@
     }
     a { color: var(--cyan); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    img { max-width: 100%; }
 
     /* ── Utility ────────────────────────────────────────────────── */
     .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
@@ -86,10 +85,10 @@
       padding: 0 24px;
     }
     .nav-brand {
-      font-size: 1rem;
-      font-weight: 700;
+      font-size: 1.1rem;
+      font-weight: 800;
       color: var(--white);
-      letter-spacing: .02em;
+      letter-spacing: .04em;
     }
     .nav-brand span { color: var(--cyan); }
     .nav-links { display: flex; gap: 28px; list-style: none; }
@@ -109,7 +108,6 @@
       transition: background .2s !important;
     }
     .btn-nav:hover { background: var(--cyan) !important; }
-
     @media (max-width: 700px) {
       .nav-links { gap: 14px; }
       .nav-links li:not(:last-child):not(:nth-last-child(2)) { display: none; }
@@ -124,47 +122,6 @@
       position: relative;
       overflow: hidden;
     }
-    .hero-layout {
-      display: flex;
-      align-items: center;
-      gap: 60px;
-    }
-    .hero-text { flex: 1; min-width: 0; }
-    .hero-photo-wrap {
-      flex-shrink: 0;
-      position: relative;
-    }
-    .hero-photo-wrap::before {
-      content: '';
-      position: absolute;
-      inset: -6px;
-      border-radius: 50%;
-      background: conic-gradient(var(--cyan), var(--sky), var(--blue), var(--cyan));
-      animation: spin 8s linear infinite;
-      z-index: 0;
-    }
-    .hero-photo-wrap::after {
-      content: '';
-      position: absolute;
-      inset: -20px;
-      border-radius: 50%;
-      background: radial-gradient(ellipse, rgba(0,198,255,.15), transparent 70%);
-      z-index: 0;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .hero-photo {
-      width: 240px; height: 240px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center top;
-      border: 4px solid var(--navy);
-      position: relative; z-index: 1;
-      display: block;
-    }
-    @media (max-width: 860px) {
-      .hero-layout { flex-direction: column-reverse; gap: 32px; }
-      .hero-photo { width: 160px; height: 160px; }
-    }
     .hero-bg {
       position: absolute; inset: 0; z-index: 0;
       background:
@@ -172,7 +129,6 @@
         radial-gradient(ellipse 50% 50% at 20% 70%, rgba(0,198,255,.10) 0%, transparent 60%),
         var(--navy);
     }
-    /* grid lines */
     .hero-bg::after {
       content: '';
       position: absolute; inset: 0;
@@ -181,11 +137,23 @@
         linear-gradient(90deg, rgba(14,95,163,.07) 1px, transparent 1px);
       background-size: 60px 60px;
     }
-    .hero-content {
+    .hero-layout {
       position: relative; z-index: 1;
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+    .hero-text { flex: 1; min-width: 0; }
+    .hero-visual {
+      flex-shrink: 0;
+      width: 380px;
+      opacity: .9;
+    }
+    @media (max-width: 900px) {
+      .hero-visual { display: none; }
     }
     .hero-eyebrow {
       display: flex; align-items: center; gap: 10px;
@@ -203,11 +171,12 @@
       background: var(--cyan);
     }
     h1 {
-      font-size: clamp(2.4rem, 6vw, 4rem);
-      font-weight: 800;
-      line-height: 1.15;
+      font-size: clamp(2.6rem, 6vw, 4.2rem);
+      font-weight: 900;
+      line-height: 1.1;
       color: var(--white);
       margin-bottom: 8px;
+      letter-spacing: -.01em;
     }
     h1 em {
       font-style: normal;
@@ -217,10 +186,11 @@
       background-clip: text;
     }
     .hero-sub {
-      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
       color: var(--muted);
-      max-width: 640px;
+      max-width: 580px;
       margin: 20px 0 36px;
+      line-height: 1.7;
     }
     .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
     .btn-primary {
@@ -248,19 +218,19 @@
     .btn-outline:hover { border-color: var(--sky); background: rgba(14,95,163,.1); text-decoration: none; }
     .hero-stats {
       display: flex; gap: 40px; flex-wrap: wrap;
-      margin-top: 60px;
-      padding-top: 40px;
+      margin-top: 56px;
+      padding-top: 36px;
       border-top: 1px solid var(--border);
     }
     .stat-num {
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 800;
       color: var(--white);
       line-height: 1;
     }
     .stat-num span { color: var(--cyan); }
     .stat-label {
-      font-size: .8rem;
+      font-size: .78rem;
       color: var(--muted);
       text-transform: uppercase;
       letter-spacing: .06em;
@@ -270,7 +240,7 @@
     /* ── Services ───────────────────────────────────────────────── */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
       gap: 20px;
     }
     .service-card {
@@ -284,26 +254,13 @@
       border-color: rgba(0,198,255,.45);
       transform: translateY(-3px);
     }
-    .service-icon {
-      font-size: 2rem;
-      margin-bottom: 16px;
-      display: block;
-    }
+    .service-icon { font-size: 2rem; margin-bottom: 16px; display: block; }
     .service-card h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 10px;
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--white); margin-bottom: 10px;
     }
-    .service-card p {
-      font-size: .875rem;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-    .service-tags {
-      display: flex; flex-wrap: wrap; gap: 6px;
-      margin-top: 16px;
-    }
+    .service-card p { font-size: .875rem; color: var(--muted); line-height: 1.65; }
+    .service-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
     .stag {
       font-size: .7rem;
       background: rgba(14,95,163,.25);
@@ -313,84 +270,10 @@
       border-radius: 4px;
     }
 
-    /* ── Experience ─────────────────────────────────────────────── */
-    .timeline { position: relative; }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 16px; top: 8px; bottom: 0;
-      width: 2px;
-      background: linear-gradient(180deg, var(--sky), transparent);
-    }
-    .tl-item {
-      display: flex; gap: 24px;
-      margin-bottom: 40px;
-    }
-    .tl-dot {
-      flex-shrink: 0;
-      width: 34px; height: 34px;
-      background: var(--navy2);
-      border: 2px solid var(--sky);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem;
-      position: relative; z-index: 1;
-    }
-    .tl-body {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--r);
-      padding: 20px 24px;
-      flex: 1;
-    }
-    .tl-meta {
-      display: flex; align-items: center; gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 8px;
-    }
-    .tl-company {
-      font-weight: 700;
-      color: var(--white);
-      font-size: 1rem;
-    }
-    .tl-period {
-      font-size: .78rem;
-      color: var(--muted);
-      background: rgba(255,255,255,.05);
-      padding: 2px 8px;
-      border-radius: 4px;
-    }
-    .tl-location {
-      font-size: .78rem;
-      color: var(--gold);
-    }
-    .tl-role {
-      font-size: .85rem;
-      color: var(--sky);
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .tl-body ul {
-      list-style: none;
-      display: flex; flex-direction: column; gap: 4px;
-    }
-    .tl-body ul li {
-      font-size: .85rem;
-      color: var(--muted);
-      padding-left: 14px;
-      position: relative;
-    }
-    .tl-body ul li::before {
-      content: '›';
-      position: absolute; left: 0;
-      color: var(--cyan);
-      font-weight: 700;
-    }
-
     /* ── Expertise ──────────────────────────────────────────────── */
     .expertise-cols {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 20px;
     }
     .exp-group {
@@ -414,9 +297,7 @@
       width: 20px; height: 2px;
       background: var(--cyan);
     }
-    .exp-pills {
-      display: flex; flex-wrap: wrap; gap: 6px;
-    }
+    .exp-pills { display: flex; flex-wrap: wrap; gap: 6px; }
     .pill {
       font-size: .78rem;
       background: rgba(255,255,255,.05);
@@ -426,7 +307,7 @@
       border-radius: 20px;
     }
 
-    /* ── Standards / Regs ───────────────────────────────────────── */
+    /* ── Standards ──────────────────────────────────────────────── */
     .standards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -453,20 +334,7 @@
     .std-card h4 { font-size: .88rem; color: var(--light); margin-bottom: 6px; }
     .std-card p  { font-size: .78rem; color: var(--muted); }
 
-    /* ── Aircraft ───────────────────────────────────────────────── */
-    .aircraft-list {
-      display: flex; flex-wrap: wrap; gap: 10px;
-    }
-    .ac-chip {
-      background: rgba(14,95,163,.2);
-      border: 1px solid rgba(14,95,163,.35);
-      color: var(--light);
-      font-size: .82rem;
-      padding: 6px 14px;
-      border-radius: 20px;
-    }
-
-    /* ── Why me ─────────────────────────────────────────────────── */
+    /* ── Why Me ─────────────────────────────────────────────────── */
     .why-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -479,21 +347,9 @@
       border-radius: var(--r);
       padding: 22px;
     }
-    .why-icon {
-      font-size: 1.8rem;
-      flex-shrink: 0;
-      line-height: 1;
-    }
-    .why-card h3 {
-      font-size: .95rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 6px;
-    }
-    .why-card p {
-      font-size: .84rem;
-      color: var(--muted);
-    }
+    .why-icon { font-size: 1.8rem; flex-shrink: 0; line-height: 1; }
+    .why-card h3 { font-size: .95rem; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .why-card p  { font-size: .84rem; color: var(--muted); }
 
     /* ── Contact ────────────────────────────────────────────────── */
     .contact-wrap {
@@ -504,9 +360,7 @@
     }
     @media (max-width: 700px) { .contact-wrap { grid-template-columns: 1fr; } }
     .contact-info { display: flex; flex-direction: column; gap: 18px; }
-    .contact-row {
-      display: flex; align-items: flex-start; gap: 14px;
-    }
+    .contact-row { display: flex; align-items: flex-start; gap: 14px; }
     .contact-icon {
       width: 40px; height: 40px;
       background: rgba(14,95,163,.25);
@@ -524,20 +378,11 @@
       border-radius: var(--r);
       padding: 28px;
     }
-    .contact-form h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 20px;
-    }
+    .contact-form h3 { font-size: 1.05rem; font-weight: 700; color: var(--white); margin-bottom: 20px; }
     .form-group { margin-bottom: 16px; }
     .form-group label {
-      display: block;
-      font-size: .8rem;
-      color: var(--muted);
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: .05em;
+      display: block; font-size: .8rem; color: var(--muted);
+      margin-bottom: 6px; text-transform: uppercase; letter-spacing: .05em;
     }
     .form-group input,
     .form-group textarea,
@@ -580,35 +425,29 @@
       padding: 32px 0;
       text-align: center;
     }
-    .footer-name {
-      font-size: .95rem;
-      font-weight: 700;
+    .footer-brand {
+      font-size: 1.1rem;
+      font-weight: 800;
       color: var(--white);
       margin-bottom: 6px;
     }
+    .footer-brand span { color: var(--cyan); }
     .footer-links {
       display: flex; justify-content: center; gap: 20px;
-      list-style: none;
-      margin: 10px 0;
+      list-style: none; margin: 10px 0;
     }
     .footer-links a { font-size: .82rem; color: var(--muted); }
     .footer-links a:hover { color: var(--cyan); }
     footer p { font-size: .78rem; color: #3a5070; margin-top: 10px; }
 
-    /* ── Toast (form feedback) ──────────────────────────────────── */
+    /* ── Toast ──────────────────────────────────────────────────── */
     #toast {
       position: fixed; bottom: 28px; right: 28px;
-      background: #1a3a1a;
-      border: 1px solid #2a7a2a;
-      color: #7adf7a;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-size: .88rem;
-      opacity: 0;
-      transform: translateY(12px);
+      background: #1a3a1a; border: 1px solid #2a7a2a; color: #7adf7a;
+      padding: 12px 20px; border-radius: 8px; font-size: .88rem;
+      opacity: 0; transform: translateY(12px);
       transition: opacity .3s, transform .3s;
-      z-index: 9999;
-      pointer-events: none;
+      z-index: 9999; pointer-events: none;
     }
     #toast.show { opacity: 1; transform: none; }
   </style>
@@ -621,7 +460,6 @@
     <div class="nav-brand">AvioSys<span>MV</span></div>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
-      <li><a href="#experience">Experience</a></li>
       <li><a href="#expertise">Expertise</a></li>
       <li><a href="#standards">Standards</a></li>
       <li><a href="#contact" class="btn-nav">Contact</a></li>
@@ -632,86 +470,247 @@
 <!-- ── Hero ───────────────────────────────────────────────────── -->
 <section id="hero">
   <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-layout">
-      <div class="hero-text">
-        <div class="hero-eyebrow">AvioSysMV — Independent Avionics &amp; Systems Consultant · Spain &amp; International</div>
-        <h1>Mauricio<br><em>Valenzuela</em></h1>
-        <p class="hero-sub">
-          Avionics &amp; Systems Engineer with 24+ years delivering certification, integration, and safety assessment on Part 23, 25, 27, 29 and UAV/eVTOL programmes worldwide.
-        </p>
-        <div class="hero-ctas">
-          <a href="#services" class="btn-primary">✦ View Services</a>
-          <a href="#contact" class="btn-outline">📩 Get in Touch</a>
-        </div>
-        <div class="hero-stats">
-          <div>
-            <div class="stat-num">24<span>+</span></div>
-            <div class="stat-label">Years Experience</div>
-          </div>
-          <div>
-            <div class="stat-num">4</div>
-            <div class="stat-label">Regulators (EASA · FAA · TC · DGAC)</div>
-          </div>
-          <div>
-            <div class="stat-num">12<span>+</span></div>
-            <div class="stat-label">Aircraft Platforms</div>
-          </div>
-          <div>
-            <div class="stat-num">3</div>
-            <div class="stat-label">Countries (ES · CA · CL)</div>
-          </div>
-        </div>
+  <div class="hero-layout">
+
+    <!-- Text -->
+    <div class="hero-text">
+      <div class="hero-eyebrow">Avionics &amp; Systems Engineering · Worldwide</div>
+      <h1>Expert<br><em>Avionics &amp; Systems</em><br>Consulting</h1>
+      <p class="hero-sub">
+        End-to-end certification, integration and safety assessment for EASA, FAA and Transport Canada programmes — Part 23, 25, 27, 29 and UAV/eVTOL.
+      </p>
+      <div class="hero-ctas">
+        <a href="#services" class="btn-primary">✦ Our Services</a>
+        <a href="#contact" class="btn-outline">📩 Get in Touch</a>
       </div>
-      <div class="hero-photo-wrap">
-        <img src="photo.jpg" alt="Mauricio Valenzuela — Avionics Consultant" class="hero-photo" />
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">24<span>+</span></div>
+          <div class="stat-label">Years in Avionics</div>
+        </div>
+        <div>
+          <div class="stat-num">3</div>
+          <div class="stat-label">Regulators · EASA · FAA · TC</div>
+        </div>
+        <div>
+          <div class="stat-num">4</div>
+          <div class="stat-label">Cert. Categories 23·25·27·29</div>
+        </div>
+        <div>
+          <div class="stat-num">🌍</div>
+          <div class="stat-label">Worldwide Delivery</div>
+        </div>
       </div>
     </div>
+
+    <!-- SVG avionics system diagram -->
+    <div class="hero-visual">
+      <svg viewBox="0 0 420 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- Outer orbit ring -->
+        <circle cx="210" cy="180" r="155" fill="none" stroke="rgba(14,95,163,.2)" stroke-width="1" stroke-dasharray="6,4"/>
+        <circle cx="210" cy="180" r="100" fill="none" stroke="rgba(0,198,255,.12)" stroke-width="1" stroke-dasharray="3,5"/>
+
+        <!-- Rotating dashed ring -->
+        <circle cx="210" cy="180" r="155" fill="none" stroke="rgba(0,198,255,.18)" stroke-width="1.5" stroke-dasharray="30,20">
+          <animateTransform attributeName="transform" type="rotate" from="0 210 180" to="360 210 180" dur="30s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- Connection lines to aircraft centre -->
+        <!-- COMM -->
+        <line x1="55" y1="75"  x2="185" y2="155" stroke="#00c6ff" stroke-width="1" stroke-dasharray="5,4" opacity=".45"/>
+        <!-- NAV -->
+        <line x1="365" y1="75"  x2="235" y2="155" stroke="#00c6ff" stroke-width="1" stroke-dasharray="5,4" opacity=".45"/>
+        <!-- AFCS -->
+        <line x1="38"  y1="180" x2="180" y2="180" stroke="#1a8fff" stroke-width="1" stroke-dasharray="5,4" opacity=".45"/>
+        <!-- FMS -->
+        <line x1="382" y1="180" x2="240" y2="180" stroke="#1a8fff" stroke-width="1" stroke-dasharray="5,4" opacity=".45"/>
+        <!-- SURV -->
+        <line x1="55"  y1="290" x2="185" y2="208" stroke="#00c6ff" stroke-width="1" stroke-dasharray="5,4" opacity=".45"/>
+        <!-- ELEC -->
+        <line x1="365" y1="290" x2="235" y2="208" stroke="#00c6ff" stroke-width="1" stroke-dasharray="5,4" opacity=".45"/>
+
+        <!-- Data pulse animations on lines -->
+        <circle r="3" fill="#00c6ff" opacity=".9">
+          <animateMotion dur="3s" repeatCount="indefinite">
+            <mpath href="#l1"/>
+          </animateMotion>
+        </circle>
+        <path id="l1" d="M55,75 L185,155" fill="none"/>
+
+        <circle r="3" fill="#1a8fff" opacity=".9">
+          <animateMotion dur="4s" repeatCount="indefinite" begin="1s">
+            <mpath href="#l2"/>
+          </animateMotion>
+        </circle>
+        <path id="l2" d="M382,180 L240,180" fill="none"/>
+
+        <circle r="3" fill="#00c6ff" opacity=".9">
+          <animateMotion dur="3.5s" repeatCount="indefinite" begin="0.5s">
+            <mpath href="#l3"/>
+          </animateMotion>
+        </circle>
+        <path id="l3" d="M55,290 L185,208" fill="none"/>
+
+        <!-- Aircraft planform silhouette (top view) -->
+        <!-- Fuselage -->
+        <ellipse cx="210" cy="180" rx="14" ry="70" fill="#1a8fff" opacity=".85" filter="url(#glow)"/>
+        <!-- Wing left -->
+        <path d="M210,155 L72,200 L95,210 L210,170 Z" fill="#0e5fa3" opacity=".75"/>
+        <!-- Wing right -->
+        <path d="M210,155 L348,200 L325,210 L210,170 Z" fill="#0e5fa3" opacity=".75"/>
+        <!-- Tail horiz -->
+        <path d="M210,240 L158,262 L172,267 L210,250 L248,267 L262,262 Z" fill="#0e5fa3" opacity=".6"/>
+        <!-- Tail vert -->
+        <ellipse cx="210" cy="245" rx="5" ry="18" fill="#1a8fff" opacity=".6"/>
+        <!-- Engine nacelles -->
+        <ellipse cx="140" cy="188" rx="8" ry="22" fill="#132035" stroke="#1a8fff" stroke-width="1" opacity=".8"/>
+        <ellipse cx="280" cy="188" rx="8" ry="22" fill="#132035" stroke="#1a8fff" stroke-width="1" opacity=".8"/>
+        <!-- Centre pulse -->
+        <circle cx="210" cy="180" r="6" fill="#00c6ff" opacity=".95" filter="url(#glow)"/>
+        <circle cx="210" cy="180" r="6" fill="none" stroke="#00c6ff" stroke-width="1.5">
+          <animate attributeName="r" values="6;22;6" dur="2.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values=".9;0;.9" dur="2.5s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- System nodes -->
+        <!-- COMM (top-left) -->
+        <circle cx="55" cy="75" r="36" fill="#0b1a2e" stroke="#00c6ff" stroke-width="1.5" opacity=".85"/>
+        <text x="55" y="70" text-anchor="middle" fill="#00c6ff" font-size="9" font-family="monospace" font-weight="bold">COMM</text>
+        <text x="55" y="82" text-anchor="middle" fill="#8fa8c8" font-size="7.5" font-family="monospace">VHF·HF·SAT</text>
+
+        <!-- NAV (top-right) -->
+        <circle cx="365" cy="75" r="36" fill="#0b1a2e" stroke="#00c6ff" stroke-width="1.5" opacity=".85"/>
+        <text x="365" y="70" text-anchor="middle" fill="#00c6ff" font-size="9" font-family="monospace" font-weight="bold">NAV</text>
+        <text x="365" y="82" text-anchor="middle" fill="#8fa8c8" font-size="7.5" font-family="monospace">GPS·ILS·INS</text>
+
+        <!-- AFCS (left) -->
+        <circle cx="38" cy="180" r="36" fill="#0b1a2e" stroke="#1a8fff" stroke-width="1.5" opacity=".85"/>
+        <text x="38" y="175" text-anchor="middle" fill="#1a8fff" font-size="9" font-family="monospace" font-weight="bold">AFCS</text>
+        <text x="38" y="187" text-anchor="middle" fill="#8fa8c8" font-size="7.5" font-family="monospace">AUTOPILOT</text>
+
+        <!-- FMS (right) -->
+        <circle cx="382" cy="180" r="36" fill="#0b1a2e" stroke="#1a8fff" stroke-width="1.5" opacity=".85"/>
+        <text x="382" y="175" text-anchor="middle" fill="#1a8fff" font-size="9" font-family="monospace" font-weight="bold">FMS</text>
+        <text x="382" y="187" text-anchor="middle" fill="#8fa8c8" font-size="7.5" font-family="monospace">DISPLAY</text>
+
+        <!-- SURV (bottom-left) -->
+        <circle cx="55" cy="290" r="36" fill="#0b1a2e" stroke="#00c6ff" stroke-width="1.5" opacity=".85"/>
+        <text x="55" y="285" text-anchor="middle" fill="#00c6ff" font-size="9" font-family="monospace" font-weight="bold">SURV</text>
+        <text x="55" y="297" text-anchor="middle" fill="#8fa8c8" font-size="7.5" font-family="monospace">TCAS·TAWS</text>
+
+        <!-- ELEC (bottom-right) -->
+        <circle cx="365" cy="290" r="36" fill="#0b1a2e" stroke="#00c6ff" stroke-width="1.5" opacity=".85"/>
+        <text x="365" y="285" text-anchor="middle" fill="#00c6ff" font-size="9" font-family="monospace" font-weight="bold">ELEC</text>
+        <text x="365" y="297" text-anchor="middle" fill="#8fa8c8" font-size="7.5" font-family="monospace">PWR·SYS</text>
+      </svg>
+    </div>
+
   </div>
 </section>
 
 <!-- ── Services ───────────────────────────────────────────────── -->
 <section id="services" class="section">
   <div class="container">
-    <div class="tag">What I offer</div>
+    <div class="tag">What we offer</div>
     <h2 class="section-title">Consulting Services</h2>
     <div class="divider"></div>
     <p class="section-lead">
-      From early architecture to final certification, I provide expert avionics and systems engineering support that consultancies and OEMs can rely on.
+      From operational concept to final certification evidence — end-to-end avionics and systems engineering support that OEMs, operators and consultancies can rely on.
     </p>
     <div class="services-grid">
 
       <div class="service-card">
-        <span class="service-icon">📋</span>
-        <h3>Avionics System Integration</h3>
-        <p>Full-lifecycle avionics integration from requirements capture through verification — ICD/IDD management, ARINC 429/664/MIL-STD-1553 bus analysis, interface control and lab-bench bring-up.</p>
+        <span class="service-icon">📖</span>
+        <h3>CONOPS — Concept of Operations</h3>
+        <p>Development of the Concept of Operations defining operational environment, missions, stakeholder needs and system interactions — the foundation for requirements derivation and certification basis definition.</p>
         <div class="service-tags">
-          <span class="stag">ARP4754A</span><span class="stag">DO-160G</span><span class="stag">A429</span><span class="stag">A664</span>
+          <span class="stag">ARP4754A</span><span class="stag">Stakeholder Needs</span><span class="stag">Op. Scenarios</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">🎯</span>
+        <h3>Aircraft-Level Requirements</h3>
+        <p>Derivation and management of top-level aircraft requirements from applicable regulations and operational needs. Functional allocation to systems, DAL assignment and certification basis traceability.</p>
+        <div class="service-tags">
+          <span class="stag">ARP4754A</span><span class="stag">DAL Allocation</span><span class="stag">CS / FAR</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">⚙️</span>
+        <h3>Systems Requirements</h3>
+        <p>System-level requirements capture, decomposition and verification planning. Interface Control Documents, system architecture specifications and derived requirements flow-down through the full V-model.</p>
+        <div class="service-tags">
+          <span class="stag">ARP4754A</span><span class="stag">ICD / IDD</span><span class="stag">V&amp;V Planning</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">🔩</span>
+        <h3>Item-Level Requirements</h3>
+        <p>LRU and equipment-level requirements derived from system requirements — covering both hardware and software items. Supplier documentation review and COTS / previously developed software assessment.</p>
+        <div class="service-tags">
+          <span class="stag">DO-178C</span><span class="stag">DO-254</span><span class="stag">COTS Assessment</span>
         </div>
       </div>
 
       <div class="service-card">
         <span class="service-icon">🛡️</span>
         <h3>Safety Assessment</h3>
-        <p>Functional Hazard Assessment (FHA), Preliminary System Safety Assessment (PSSA) and System Safety Assessment (SSA) developed to ARP4754A / ARP4761A rigour for Part 23, 25, 27 and 29 aircraft.</p>
+        <p>Functional Hazard Assessment (FHA), Preliminary System Safety Assessment (PSSA) and System Safety Assessment (SSA) developed to ARP4754A / ARP4761A rigour for Part 23, 25, 27, 29 and UAV/eVTOL programmes.</p>
         <div class="service-tags">
           <span class="stag">FHA</span><span class="stag">PSSA</span><span class="stag">SSA</span><span class="stag">ARP4761A</span>
         </div>
       </div>
 
       <div class="service-card">
+        <span class="service-icon">📋</span>
+        <h3>Avionics System Integration</h3>
+        <p>Full-lifecycle avionics integration from requirements capture through verification — bus and interface analysis, interface control management, and hardware/software integration across all applicable data buses and protocols.</p>
+        <div class="service-tags">
+          <span class="stag">ARP4754A</span><span class="stag">DO-160G</span><span class="stag">Integration</span>
+        </div>
+      </div>
+
+      <div class="service-card">
         <span class="service-icon">✅</span>
         <h3>Certification &amp; Compliance</h3>
-        <p>PSAC/PHAC drafting, Compliance Matrix, Design Compliance Reports, Statement of Compliance and all certification liaison artefacts for EASA, FAA and Transport Canada programmes.</p>
+        <p>Certification planning, compliance matrix and design compliance documentation for EASA, FAA and Transport Canada programmes. Coordination with authorities and designation engineering representatives.</p>
         <div class="service-tags">
-          <span class="stag">EASA</span><span class="stag">FAA</span><span class="stag">DO-178C</span><span class="stag">DO-254</span>
+          <span class="stag">EASA</span><span class="stag">FAA</span><span class="stag">TC</span><span class="stag">DO-178C</span><span class="stag">DO-254</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">📊</span>
+        <h3>Compliance Matrix</h3>
+        <p>Full compliance matrix mapping every applicable certification requirement to the means of compliance, responsible document and evidence reference — structured and ready for authority review.</p>
+        <div class="service-tags">
+          <span class="stag">MoC</span><span class="stag">EASA / FAA / TC</span><span class="stag">Traceability</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">📝</span>
+        <h3>Statement of Compliance (SoC)</h3>
+        <p>Statements of Compliance and accomplishment summaries for DO-178C, DO-254, DO-160G and ARP4754A, consolidating the complete evidence package for submission to the airworthiness authority.</p>
+        <div class="service-tags">
+          <span class="stag">SoC / SAS / HAS</span><span class="stag">DO-178C</span><span class="stag">DO-254</span>
         </div>
       </div>
 
       <div class="service-card">
         <span class="service-icon">💻</span>
         <h3>Software &amp; Hardware Assurance</h3>
-        <p>DAL-level planning, compliance review and supplier oversight for airborne software (DO-178C) and complex electronic hardware (DO-254). Independence review and DER support.</p>
+        <p>DAL-level lifecycle planning, compliance review and independent supplier oversight for airborne software and complex electronic hardware. Independence review and authority support.</p>
         <div class="service-tags">
           <span class="stag">DO-178C</span><span class="stag">DO-254</span><span class="stag">DAL A–D</span><span class="stag">HDAL A–D</span>
         </div>
@@ -720,7 +719,7 @@
       <div class="service-card">
         <span class="service-icon">🔬</span>
         <h3>Verification &amp; Test Engineering</h3>
-        <p>Test Definition Sheets, test procedures and execution reports for rig, iron-bird and aircraft-level certification tests. Flight test engineering, ground runs and Return to Service (RTS).</p>
+        <p>Test plans, test procedures and execution reports for rig, bench, iron-bird and aircraft-level certification tests. Flight test engineering, ground runs and airworthiness return to service.</p>
         <div class="service-tags">
           <span class="stag">Rig Test</span><span class="stag">Flight Test</span><span class="stag">DO-160G</span>
         </div>
@@ -729,184 +728,9 @@
       <div class="service-card">
         <span class="service-icon">🚁</span>
         <h3>UAV / eVTOL Programmes</h3>
-        <p>Novel aircraft concept support: avionics architecture for UAS, AAM and eVTOL platforms. Requirements management (JDP, PDR, CDR), supplier qualification and EASA SC-VTOL / SC-UAS guidance.</p>
+        <p>Novel aircraft concept support: avionics architecture for UAS, AAM and eVTOL platforms. Requirements management across all programme phases — from concept through certification — under EASA SC-VTOL and SC-RPAS guidance.</p>
         <div class="service-tags">
-          <span class="stag">eVTOL</span><span class="stag">UAS</span><span class="stag">SC-VTOL</span><span class="stag">ARP4754A</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-icon">📐</span>
-        <h3>Avionics Architecture &amp; Design</h3>
-        <p>System-level avionics architecture, IMA / federated trade studies, power and signal distribution design (PD&amp;C), and electrical drawing production in AutoCAD Electrical.</p>
-        <div class="service-tags">
-          <span class="stag">IMA</span><span class="stag">ED-124</span><span class="stag">AutoCAD</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-icon">📡</span>
-        <h3>Avionics Maintenance &amp; Training</h3>
-        <p>Preventive and corrective maintenance management across communication, navigation, autopilot and surveillance systems. Development of training programmes for avionics specialists.</p>
-        <div class="service-tags">
-          <span class="stag">EASA Part-145</span><span class="stag">ATA Chapters</span><span class="stag">RTS</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-icon">🎯</span>
-        <h3>Aircraft-Level Requirements</h3>
-        <p>Derivation and management of top-level aircraft requirements from CS/FAR regulations and operational needs. Functional allocation to systems, DAL assignment, and traceability to certification basis per ARP4754A §5.</p>
-        <div class="service-tags">
-          <span class="stag">ARP4754A</span><span class="stag">CS-25 / FAR 25</span><span class="stag">DOORS</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-icon">⚙️</span>
-        <h3>Systems Requirements</h3>
-        <p>System-level requirements capture, decomposition and verification planning. Interface Control Documents (ICD), system architecture specifications and derived requirements flow-down from aircraft level per the V-model.</p>
-        <div class="service-tags">
-          <span class="stag">ARP4754A §5</span><span class="stag">ICD / IDD</span><span class="stag">V&amp;V Planning</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-icon">🔩</span>
-        <h3>Item-Level Requirements</h3>
-        <p>LRU/equipment-level requirements derived from system requirements — hardware requirements (DO-254) and software requirements (DO-178C). Supplier Statement of Design (SoD) review and COTS assessment.</p>
-        <div class="service-tags">
-          <span class="stag">DO-178C</span><span class="stag">DO-254</span><span class="stag">SoD Review</span><span class="stag">COTS</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-icon">📊</span>
-        <h3>Compliance Matrix</h3>
-        <p>Full compliance matrix development mapping every applicable certification requirement to the Means of Compliance (MoC), the responsible document, and the evidence reference — ready for DER/EASA review.</p>
-        <div class="service-tags">
-          <span class="stag">MoC</span><span class="stag">PSAC/PHAC</span><span class="stag">EASA / FAA</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-icon">📝</span>
-        <h3>Statement of Compliance (SoC)</h3>
-        <p>Authored Statements of Compliance and Software/Hardware Accomplishment Summaries (SAS/HAS) for DO-178C, DO-254, DO-160G and ARP4754A, summarising the complete evidence package for the authority.</p>
-        <div class="service-tags">
-          <span class="stag">SAS / HAS</span><span class="stag">DO-178C §11</span><span class="stag">DO-254 §10</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="service-icon">📖</span>
-        <h3>CONOPS — Concept of Operations</h3>
-        <p>Development of the Concept of Operations document defining the operational environment, missions, stakeholder needs, operational scenarios and system interactions — the foundation for all requirements derivation and certification basis definition per ARP4754A §4.</p>
-        <div class="service-tags">
-          <span class="stag">ARP4754A §4</span><span class="stag">Stakeholder Needs</span><span class="stag">OpScenarios</span><span class="stag">EASA / FAA</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── Experience ─────────────────────────────────────────────── -->
-<section id="experience" class="section section-alt">
-  <div class="container">
-    <div class="tag">Career</div>
-    <h2 class="section-title">Professional Experience</h2>
-    <div class="divider"></div>
-    <p class="section-lead">Over two decades spanning military aviation, MRO, OEM and advanced air mobility.</p>
-
-    <div class="timeline">
-
-      <div class="tl-item">
-        <div class="tl-dot">🛸</div>
-        <div class="tl-body">
-          <div class="tl-meta">
-            <span class="tl-company">Crisalion Mobility</span>
-            <span class="tl-period">Oct 2024 – Present</span>
-            <span class="tl-location">📍 Spain</span>
-          </div>
-          <div class="tl-role">Avionics Engineer Manager</div>
-          <ul>
-            <li>Leading avionics integration for the Integrity eVTOL programme</li>
-            <li>ARP4754A/ARP4761 systems development; Aircraft-Level Requirements</li>
-            <li>Avionics System Description Document &amp; Statement of Compliance (SOC)</li>
-            <li>RFI/supplier review, PD&amp;C electrical drawings</li>
-            <li>Programme phases: JDP, PDR, CDR, Integration, Certification</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot">✈️</div>
-        <div class="tl-body">
-          <div class="tl-meta">
-            <span class="tl-company">Bombardier Aerospace</span>
-            <span class="tl-period">Sep 2022 – Mar 2024</span>
-            <span class="tl-location">📍 Canada</span>
-          </div>
-          <div class="tl-role">Professional Engineer — Avionics Integration (Global 5500 / 6500)</div>
-          <ul>
-            <li>Authored, reviewed &amp; approved Design Compliance Reports and DCPs</li>
-            <li>Electrical drawings (AutoCAD Electrical), functional &amp; TDS tests</li>
-            <li>Rig testing for certification credit; production support</li>
-            <li>Compliance Matrix and SoC for ARP4754A, DO-160G, DO-178C, DO-254</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot">🔧</div>
-        <div class="tl-body">
-          <div class="tl-meta">
-            <span class="tl-company">IMP Aerospace &amp; Defence</span>
-            <span class="tl-period">Feb 2022 – Sep 2022</span>
-            <span class="tl-location">📍 Halifax, Canada</span>
-          </div>
-          <div class="tl-role">Avionics Engineer Analyst</div>
-          <ul>
-            <li>Testing, DND engineering support</li>
-            <li>Maintenance manual updates (FFF replacements)</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot">🇨🇱</div>
-        <div class="tl-body">
-          <div class="tl-meta">
-            <span class="tl-company">Chilean Navy — PMO Representative (On-site Canada)</span>
-            <span class="tl-period">2017 – 2021</span>
-            <span class="tl-location">📍 Halifax, Canada</span>
-          </div>
-          <div class="tl-role">Programme Manager — P-3 Orion AUP / MLU</div>
-          <ul>
-            <li>Oversaw complete avionics suite upgrade, new engines &amp; new wings for two P-3 Orion aircraft</li>
-            <li>Supported IMP Engineering in qualification &amp; certification</li>
-            <li>Reviewed/approved electrical installation drawings; presided over PDR/CDR</li>
-            <li>Flight test engineer — ground and airborne test execution</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot">⚓</div>
-        <div class="tl-body">
-          <div class="tl-meta">
-            <span class="tl-company">Chilean Navy — Naval Aviation School</span>
-            <span class="tl-period">2001 – 2016 (incl. Instructor 2006–2021)</span>
-            <span class="tl-location">📍 Con-Con, Chile</span>
-          </div>
-          <div class="tl-role">Avionics Supervisor | Radar Specialist | Military Instructor</div>
-          <ul>
-            <li>11+ years teaching Radio Navigation and Radar at Naval Aviation School</li>
-            <li>Radar overhaul: WX Radar, Search Radar, ISAR, TCAS, GPWS/TAWS</li>
-            <li>Nav/Comm/Autopilot maintenance across fixed- and rotary-wing fleets</li>
-            <li>ADF, DME, GPS, RADALT, ELT, VHF, HF, UHF maintenance and RTS</li>
-          </ul>
+          <span class="stag">eVTOL</span><span class="stag">UAS</span><span class="stag">SC-VTOL</span><span class="stag">AAM</span>
         </div>
       </div>
 
@@ -915,74 +739,81 @@
 </section>
 
 <!-- ── Technical Expertise ─────────────────────────────────────── -->
-<section id="expertise" class="section">
+<section id="expertise" class="section section-alt">
   <div class="container">
     <div class="tag">Technical depth</div>
     <h2 class="section-title">Areas of Expertise</h2>
     <div class="divider"></div>
+    <p class="section-lead">Deep technical knowledge across the full spectrum of avionics and aircraft systems disciplines.</p>
     <div class="expertise-cols">
 
       <div class="exp-group">
-        <h3>Communication</h3>
+        <h3>Communication Systems</h3>
         <div class="exp-pills">
-          <span class="pill">VHF</span><span class="pill">UHF</span><span class="pill">HF</span>
-          <span class="pill">Satcom</span><span class="pill">ELT</span><span class="pill">ICS</span>
+          <span class="pill">VHF / UHF / HF</span>
+          <span class="pill">Satcom</span>
+          <span class="pill">ICS / Intercom</span>
+          <span class="pill">ELT</span>
+          <span class="pill">Link 16 / JTIDS</span>
         </div>
       </div>
 
       <div class="exp-group">
-        <h3>Navigation</h3>
+        <h3>Navigation &amp; Positioning</h3>
         <div class="exp-pills">
-          <span class="pill">GPS/GNSS</span><span class="pill">ILS</span><span class="pill">VOR/DME</span>
-          <span class="pill">ADF</span><span class="pill">INS/EGI</span><span class="pill">AHRS</span><span class="pill">RadAlt</span>
+          <span class="pill">GPS / GNSS</span>
+          <span class="pill">ILS / VOR / DME</span>
+          <span class="pill">INS / EGI</span>
+          <span class="pill">AHRS</span>
+          <span class="pill">Radio Altimeter</span>
+          <span class="pill">ADF</span>
         </div>
       </div>
 
       <div class="exp-group">
-        <h3>Surveillance</h3>
+        <h3>Surveillance &amp; Safety</h3>
         <div class="exp-pills">
-          <span class="pill">TCAS II</span><span class="pill">TAWS/GPWS</span><span class="pill">Transponder Mode S</span>
-          <span class="pill">Modes 4 &amp; 5</span><span class="pill">WX Radar</span><span class="pill">Search Radar</span><span class="pill">ISAR</span>
+          <span class="pill">TCAS II</span>
+          <span class="pill">TAWS / GPWS</span>
+          <span class="pill">ADS-B / Transponder</span>
+          <span class="pill">Weather Radar</span>
+          <span class="pill">Search Radar</span>
+          <span class="pill">IFF Modes 4 &amp; 5</span>
         </div>
       </div>
 
       <div class="exp-group">
-        <h3>Display &amp; FMS</h3>
+        <h3>Flight Deck &amp; Automation</h3>
         <div class="exp-pills">
-          <span class="pill">EFIS / Glass Cockpit</span><span class="pill">SVS</span><span class="pill">EVS</span>
-          <span class="pill">CVS</span><span class="pill">Autopilot</span><span class="pill">AFCS</span>
+          <span class="pill">EFIS / Glass Cockpit</span>
+          <span class="pill">SVS / EVS / CVS</span>
+          <span class="pill">FMS</span>
+          <span class="pill">Autopilot / AFCS</span>
+          <span class="pill">Head-Up Display</span>
+          <span class="pill">EICAS / ECAM</span>
         </div>
       </div>
 
       <div class="exp-group">
-        <h3>Data Buses &amp; Protocols</h3>
+        <h3>System Interfaces &amp; Data Buses</h3>
         <div class="exp-pills">
-          <span class="pill">ARINC 429</span><span class="pill">ARINC 485</span><span class="pill">ARINC 664 (AFDX)</span>
-          <span class="pill">MIL-STD-1553</span><span class="pill">RS-422</span><span class="pill">RS-232</span>
-          <span class="pill">Synchro</span><span class="pill">Discrete</span>
+          <span class="pill">ARINC 429</span>
+          <span class="pill">ARINC 664 (AFDX)</span>
+          <span class="pill">MIL-STD-1553</span>
+          <span class="pill">RS-422 / RS-232</span>
+          <span class="pill">Ethernet</span>
+          <span class="pill">Discrete / Analogue</span>
         </div>
       </div>
 
       <div class="exp-group">
-        <h3>Standards &amp; Processes</h3>
+        <h3>Electrical &amp; Power Systems</h3>
         <div class="exp-pills">
-          <span class="pill">DO-178C</span><span class="pill">DO-254</span><span class="pill">DO-160G</span>
-          <span class="pill">ARP4754A</span><span class="pill">ARP4761A</span><span class="pill">MIL-STD-810</span>
-        </div>
-      </div>
-
-      <div class="exp-group">
-        <h3>Tools</h3>
-        <div class="exp-pills">
-          <span class="pill">AutoCAD Electrical</span><span class="pill">DOORS</span><span class="pill">MATLAB</span>
-          <span class="pill">MS Office</span><span class="pill">Agile / Jira</span>
-        </div>
-      </div>
-
-      <div class="exp-group">
-        <h3>Languages</h3>
-        <div class="exp-pills">
-          <span class="pill">Spanish — Native</span><span class="pill">English — C1 Advanced</span>
+          <span class="pill">Power Distribution</span>
+          <span class="pill">PD&amp;C Design</span>
+          <span class="pill">Electrical Load Analysis</span>
+          <span class="pill">EWIS</span>
+          <span class="pill">Battery / Hybrid (eVTOL)</span>
         </div>
       </div>
 
@@ -991,131 +822,115 @@
 </section>
 
 <!-- ── Standards & Regulations ────────────────────────────────── -->
-<section id="standards" class="section section-alt">
+<section id="standards" class="section">
   <div class="container">
     <div class="tag">Regulatory scope</div>
     <h2 class="section-title">Standards &amp; Regulations</h2>
     <div class="divider"></div>
-    <p class="section-lead">Experienced across the full EASA and FAA certification framework.</p>
+    <p class="section-lead">Experienced across the full EASA, FAA and Transport Canada certification framework for civil and military programmes.</p>
 
     <div class="standards-grid">
       <div class="std-card">
         <div class="std-badge">CS-23 / Part 23</div>
         <h4>Normal-Category Aeroplanes</h4>
-        <p>EASA certification for light &amp; commuter aircraft; Annex I (CS-23) and FAR Part 23 rules.</p>
+        <p>Light and commuter aircraft certification under EASA CS-23 and FAR Part 23 amendment 64+.</p>
       </div>
       <div class="std-card">
         <div class="std-badge">CS-25 / Part 25</div>
         <h4>Large Aeroplanes</h4>
-        <p>Transport category aircraft certification. Business jets, regional and commercial programmes.</p>
+        <p>Transport category aircraft — business jets, regional and commercial programmes.</p>
       </div>
       <div class="std-card">
         <div class="std-badge">CS-27 / Part 27</div>
         <h4>Normal-Category Rotorcraft</h4>
-        <p>Light helicopter certification — autopilot, navigation and surveillance system integration.</p>
+        <p>Light helicopter avionics integration, autopilot, navigation and surveillance systems.</p>
       </div>
       <div class="std-card">
         <div class="std-badge">CS-29 / Part 29</div>
         <h4>Large Rotorcraft</h4>
-        <p>Transport category rotorcraft — 4-axis AFCS, multi-channel redundancy and DAL-A systems.</p>
+        <p>Transport category rotorcraft — 4-axis AFCS, multi-channel redundancy, DAL-A systems.</p>
       </div>
       <div class="std-card">
-        <div class="std-badge">SC-VTOL / UAS</div>
+        <div class="std-badge">SC-VTOL / SC-RPAS</div>
         <h4>UAV &amp; eVTOL</h4>
         <p>Novel category aircraft — EASA SC-VTOL, SC-RPAS and FAA AC 21-17G certification concepts.</p>
       </div>
       <div class="std-card">
         <div class="std-badge">ARP 4754A</div>
         <h4>System Development</h4>
-        <p>Aircraft &amp; system development assurance — FHA, PSSA, SSA, DAL allocation, V&amp;V planning.</p>
+        <p>Aircraft and system development assurance — DAL allocation, V&amp;V, safety assessment integration.</p>
+      </div>
+      <div class="std-card">
+        <div class="std-badge">ARP 4761A</div>
+        <h4>Safety Assessment Methods</h4>
+        <p>Guidelines and methods for the safety assessment process: FHA, PSSA, SSA, FTA, FMEA, CCA.</p>
       </div>
       <div class="std-card">
         <div class="std-badge">DO-178C</div>
         <h4>Software Assurance</h4>
-        <p>All DAL levels A–D; lifecycle planning, compliance matrices and supplier oversight.</p>
+        <p>All DAL levels A–D. Lifecycle planning, compliance matrices, independence review and authority coordination.</p>
       </div>
       <div class="std-card">
         <div class="std-badge">DO-254</div>
         <h4>Hardware Assurance</h4>
-        <p>HDAL A–D for complex electronic hardware; HDPs, design standards and functional testing.</p>
+        <p>HDAL A–D for complex electronic hardware — design standards, functional testing and supplier oversight.</p>
       </div>
       <div class="std-card">
         <div class="std-badge">DO-160G</div>
         <h4>Environmental Testing</h4>
-        <p>Test definition, qualification witnessing and test report review for airborne equipment.</p>
-      </div>
-    </div>
-
-    <!-- Aircraft platforms -->
-    <div style="margin-top:48px;">
-      <div class="tag">Platforms</div>
-      <h2 class="section-title" style="font-size:1.5rem;">Aircraft Platforms Worked On</h2>
-      <div class="divider"></div>
-      <div class="aircraft-list">
-        <span class="ac-chip">✈ Airbus C-295</span>
-        <span class="ac-chip">✈ Lockheed P-3 Orion</span>
-        <span class="ac-chip">✈ EADS CASA C-212</span>
-        <span class="ac-chip">✈ Embraer P-111</span>
-        <span class="ac-chip">✈ Vulcanair P-68</span>
-        <span class="ac-chip">✈ Pilatus PC-7</span>
-        <span class="ac-chip">🚁 Eurocopter AS365 Dauphin (3/4-axis)</span>
-        <span class="ac-chip">🚁 Eurocopter AS332 Cougar (4-axis)</span>
-        <span class="ac-chip">🚁 Bölkow BO-105</span>
-        <span class="ac-chip">🚁 Bell 206 Jet Ranger</span>
-        <span class="ac-chip">🛸 Integrity eVTOL (Crisalion)</span>
-        <span class="ac-chip">✈ Bombardier Global 5500 / 6500</span>
+        <p>Test definition, qualification witnessing and test report review for airborne electronic equipment.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── Why Me ──────────────────────────────────────────────────── -->
-<section class="section">
+<!-- ── Why AvioSysMV ──────────────────────────────────────────── -->
+<section class="section section-alt">
   <div class="container">
     <div class="tag">Value proposition</div>
-    <h2 class="section-title">Why Work With Me</h2>
+    <h2 class="section-title">Why AvioSysMV</h2>
     <div class="divider"></div>
     <div class="why-grid">
       <div class="why-card">
         <div class="why-icon">🌍</div>
         <div>
-          <h3>Truly International</h3>
-          <p>Delivered programmes in Spain, Canada and Chile across EASA, FAA and Transport Canada frameworks. Comfortable as an on-site or remote consultant.</p>
+          <h3>Truly Worldwide</h3>
+          <p>Programmes delivered across Europe, North America and beyond. Fluent in EASA, FAA and Transport Canada frameworks — remote or on-site, wherever you need us.</p>
         </div>
       </div>
       <div class="why-card">
         <div class="why-icon">🎯</div>
         <div>
           <h3>End-to-End Delivery</h3>
-          <p>From FHA and architecture at concept phase through test witnessing and final DER sign-off — no hand-off gaps, single point of accountability.</p>
+          <p>From CONOPS and FHA at concept phase through final compliance evidence — no hand-off gaps, single point of accountability across the full V-model.</p>
         </div>
       </div>
       <div class="why-card">
         <div class="why-icon">⚡</div>
         <div>
           <h3>Immediate Availability</h3>
-          <p>As an independent consultant I can mobilise quickly, peak-load your team for critical phases, or embed for longer programmes.</p>
+          <p>We mobilise quickly to peak-load your team for critical certification phases, or embed for the full programme lifecycle.</p>
         </div>
       </div>
       <div class="why-card">
         <div class="why-icon">🎓</div>
         <div>
-          <h3>Deep Technical Roots</h3>
-          <p>11 years as a military avionics instructor, hands-on bench and flight-test experience — not just paper certification but real system understanding.</p>
+          <h3>Real Technical Depth</h3>
+          <p>Hands-on bench, rig and flight-test experience across fixed-wing, rotary-wing and novel aircraft — not just documentation, but system understanding.</p>
         </div>
       </div>
       <div class="why-card">
         <div class="why-icon">🤝</div>
         <div>
           <h3>Consultancy-Ready</h3>
-          <p>Used to white-label delivery for prime consultancies and OEMs. Deliverables to your template, your configuration control, your DER relationships.</p>
+          <p>White-label delivery for prime consultancies and OEMs. Deliverables to your template, your configuration control and your DER relationships.</p>
         </div>
       </div>
       <div class="why-card">
         <div class="why-icon">🚀</div>
         <div>
-          <h3>UAV &amp; eVTOL Native</h3>
-          <p>Already delivering on a live eVTOL programme — no learning curve on novel category aircraft, SC-VTOL means of compliance or EASA innovation pathways.</p>
+          <h3>eVTOL &amp; UAV Native</h3>
+          <p>Already active on a live eVTOL programme. No learning curve on novel category aircraft, SC-VTOL means of compliance or EASA innovation pathways.</p>
         </div>
       </div>
     </div>
@@ -1123,12 +938,12 @@
 </section>
 
 <!-- ── Contact ─────────────────────────────────────────────────── -->
-<section id="contact" class="section section-alt">
+<section id="contact" class="section">
   <div class="container">
     <div class="tag">Let's talk</div>
     <h2 class="section-title">Get in Touch</h2>
     <div class="divider"></div>
-    <p class="section-lead">Available for subcontracting, fixed-price deliverables, or part-time/full-time secondment with consultancies and OEMs.</p>
+    <p class="section-lead">Available for subcontracting, fixed-price deliverables or embedded secondment with consultancies and OEMs worldwide.</p>
 
     <div class="contact-wrap">
       <div class="contact-info">
@@ -1136,7 +951,7 @@
           <div class="contact-icon">📍</div>
           <div>
             <div class="contact-label">Location</div>
-            <div class="contact-value">Parla, Madrid — Spain</div>
+            <div class="contact-value">Madrid, Spain — Available Worldwide</div>
           </div>
         </div>
         <div class="contact-row">
@@ -1160,12 +975,11 @@
             <div class="contact-value"><a href="https://www.linkedin.com/in/it-avionicsmauriciovalenzuela" target="_blank">linkedin.com/in/it-avionicsmauriciovalenzuela</a></div>
           </div>
         </div>
-
         <div style="margin-top:24px; padding:20px; background:var(--card); border:1px solid var(--border); border-radius:var(--r);">
-          <p style="font-size:.82rem; color:var(--muted); line-height:1.7;">
-            <strong style="color:var(--cyan);">Availability:</strong> Open to remote and on-site engagements across the EU and internationally.<br><br>
-            <strong style="color:var(--cyan);">Engagement models:</strong> Day-rate subcontracting · Fixed-price deliverables · Embedded team member<br><br>
-            <strong style="color:var(--cyan);">Sectors:</strong> Civil aviation · Military upgrade · UAV/UAS · Advanced Air Mobility
+          <p style="font-size:.82rem; color:var(--muted); line-height:1.8;">
+            <strong style="color:var(--cyan);">Availability:</strong> Remote and on-site worldwide<br>
+            <strong style="color:var(--cyan);">Engagement models:</strong> Day-rate · Fixed-price deliverables · Embedded<br>
+            <strong style="color:var(--cyan);">Sectors:</strong> Civil · Military upgrade · UAV/UAS · Advanced Air Mobility
           </p>
         </div>
       </div>
@@ -1189,19 +1003,18 @@
             <label>Service of Interest</label>
             <select id="fservice">
               <option value="">— Select —</option>
+              <option>CONOPS — Concept of Operations</option>
               <option>Aircraft-Level Requirements</option>
               <option>Systems Requirements</option>
               <option>Item-Level Requirements</option>
-              <option>Compliance Matrix</option>
-              <option>Statement of Compliance (SoC / SAS / HAS)</option>
-              <option>CONOPS — Concept of Operations</option>
+              <option>Safety Assessment (FHA / PSSA / SSA)</option>
               <option>Avionics System Integration</option>
-              <option>Safety Assessment (FHA/PSSA/SSA)</option>
               <option>Certification &amp; Compliance</option>
+              <option>Compliance Matrix</option>
+              <option>Statement of Compliance (SoC)</option>
               <option>Software / Hardware Assurance (DO-178C / DO-254)</option>
               <option>Verification &amp; Test Engineering</option>
               <option>UAV / eVTOL Programme Support</option>
-              <option>Avionics Architecture &amp; Design</option>
               <option>Other</option>
             </select>
           </div>
@@ -1219,39 +1032,46 @@
 <!-- ── Footer ─────────────────────────────────────────────────── -->
 <footer>
   <div class="container">
-    <div class="footer-name">AvioSysMV &nbsp;·&nbsp; Mauricio Valenzuela — Independent Avionics &amp; Systems Consultant</div>
+    <div class="footer-brand">AvioSys<span>MV</span></div>
     <ul class="footer-links">
       <li><a href="#services">Services</a></li>
-      <li><a href="#experience">Experience</a></li>
+      <li><a href="#expertise">Expertise</a></li>
       <li><a href="#standards">Standards</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="https://www.linkedin.com/in/it-avionicsmauriciovalenzuela" target="_blank">LinkedIn</a></li>
     </ul>
-    <p>Part 23 · Part 25 · Part 27 · Part 29 · UAV/eVTOL &nbsp;|&nbsp; EASA · FAA · Transport Canada</p>
-    <p style="margin-top:8px;">© 2026 AvioSysMV — Mauricio Valenzuela. All rights reserved.</p>
+    <p>Part 23 · Part 25 · Part 27 · Part 29 · UAV / eVTOL &nbsp;|&nbsp; EASA · FAA · Transport Canada</p>
+    <p style="margin-top:8px;">© 2026 AvioSysMV. All rights reserved.</p>
   </div>
 </footer>
 
-<div id="toast">✓ Message sent — I'll reply within 24 hours.</div>
+<div id="toast">✓ Message sent — we'll reply within 24 hours.</div>
 
 <script>
-  /* smooth nav highlight */
   const sections = document.querySelectorAll('section[id]');
-  const navAs = document.querySelectorAll('.nav-links a');
-  const observer = new IntersectionObserver(entries => {
+  const navAs    = document.querySelectorAll('.nav-links a');
+  new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
+      if (e.isIntersecting)
         navAs.forEach(a => {
           a.style.color = '';
           if (a.getAttribute('href') === '#' + e.target.id)
             a.style.color = 'var(--white)';
         });
-      }
     });
-  }, { threshold: .35 });
-  sections.forEach(s => observer.observe(s));
+  }, { threshold: .35 }).observe && sections.forEach(s =>
+    new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting)
+          navAs.forEach(a => {
+            a.style.color = '';
+            if (a.getAttribute('href') === '#' + e.target.id)
+              a.style.color = 'var(--white)';
+          });
+      });
+    }, { threshold: .35 }).observe(s)
+  );
 
-  /* contact form — opens mailto (no server needed) */
   function handleSubmit(e) {
     e.preventDefault();
     const name    = document.getElementById('fname').value;
@@ -1259,14 +1079,9 @@
     const email   = document.getElementById('femail').value;
     const service = document.getElementById('fservice').value;
     const msg     = document.getElementById('fmessage').value;
-
-    const body = encodeURIComponent(
-      `Name: ${name}\nCompany: ${company}\nEmail: ${email}\nService: ${service}\n\n${msg}`
-    );
-    const subject = encodeURIComponent(`Avionics Consulting Enquiry — ${service || 'General'}`);
+    const body    = encodeURIComponent(`Name: ${name}\nCompany: ${company}\nEmail: ${email}\nService: ${service}\n\n${msg}`);
+    const subject = encodeURIComponent(`AvioSysMV Enquiry — ${service || 'General'}`);
     window.location.href = `mailto:valenzuela.mauricio1980@gmail.com?subject=${subject}&body=${body}`;
-
-    // show toast
     const t = document.getElementById('toast');
     t.classList.add('show');
     setTimeout(() => t.classList.remove('show'), 3500);
